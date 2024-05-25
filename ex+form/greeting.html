@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Greetings</title>
+</head>
+<body>
+
+    <button onclick="Buongeorno()">Start</button>
+    <button onclick="Ciao()">Stop</button>
+    <p id="salut"></p>
+
+    <script>
+        let salot;
+
+        function Buongeorno() {
+            // affichage  voud pouvez faire au lieu d'ID query selector dans ce cas
+            salot = setInterval(function(){  document.getElementById("salut").innerHTML+= "Bonjour ";  }, 1000);
+           // Ajoute "Bonjour" chaque seconde
+        }
+
+        function Ciao() {
+            // Arrêter
+            clearInterval(salot);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    var copie=parseInt(prompt("le nombre de votre photocopie :"));
+    var facture=0;
+    if(copie<=10){
+       facture =copie*0.25;
+    }
+    else if(copie<=30){
+        facture =10*0.25 +(copie-10)*0.20;
+
+    }else{
+        facture=(10*0.25)+(20*0.20)+(copie-30)*0.10;
+    }
+   console.log ("la facture correspondante est de :",facture,"DH");
+   </script> 
+</body>
+</html>

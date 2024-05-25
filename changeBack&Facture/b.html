@@ -1,0 +1,32 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choix de couleur</title>
+</head>
+<body>
+  <h1>Choisir une couleur</h1>
+  <input type="color" id="colorPicker">
+  <button onclick="changerCouleur()">Changer</button>
+
+  <script>
+    function changerCouleur() {
+      var couleur = document.getElementById("colorPicker").value;
+      document.body.style.backgroundColor = couleur;
+      // Sauvegarder la couleur choisie dans le stockage local
+      localStorage.setItem("couleurFond", couleur);
+    }
+
+    // Charger la couleur précédemment choisie lors du chargement de la page
+    window.onload = function() {
+      var couleurStockee = localStorage.getItem("couleurFond");
+      if (couleurStockee) {
+        document.body.style.backgroundColor = couleurStockee;
+      }
+    };
+  </script>
+</body>
+</html>
+

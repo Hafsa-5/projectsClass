@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styleflex.css">
+ 
+    
+ </head>
+ <body>
+    <div class="login-container">
+        <div class="left-column">
+            <div class="login-form">
+                <h2>Log in to Flex</h2>
+                <form>
+                    <div style="position: relative;">
+                        <i class="fas fa-cloud input-icon"></i>
+                        <input type="text" class="form-input" placeholder="hostname">
+                    </div>
+                    <div style="position: relative;">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" class="form-input" placeholder="username">
+                    </div>
+                    <div style="position: relative;">
+                        <i class="fas fa-key input-icon"></i>
+                        <input type="password" class="form-input" placeholder="password">
+                    </div>
+                    <button class="login-button">Login</button>
+                </form>
+                <div class="or-divider">Or</div>
+                <div class="row">
+                    <div class="col-md-3">
+                      <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                        Continue with google
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Minified CSS and JS -->
+                  <link   rel="stylesheet" 
+                          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+                          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+                          crossorigin="anonymous">
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+                          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+                          crossorigin="anonymous">
+                  </script>
+                  
+            </div>
+        </div>
+        <div class="right-column">
+            <img src="flex.png" alt="Company Logo" class="login-image">
+        </div>
+    </div>
+</body>
+</html>

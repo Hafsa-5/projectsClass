@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #282c35;
+  font-family: 'Shadows Into Light', cursive;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #61dafb;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4fa3d1;
+}
+
+.app {
+  width: 600px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  margin-bottom: 20px;
+}
+
+.to-do-input input {
+  width: 250px;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+
+.to-do-input button {
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #61dafb;
+  transition: background-color 0.3s ease;
+}
+
+.to-do-input button:hover {
+  background-color: #4fa3d1;
+}
+
+.to-do-list i {
+  color: #61dafb;
+  cursor: pointer;
+}
+
+.to-do-list .fa-pen-to-square {
+  color: #4fa3d1;
+}
+
+.to-do-list button {
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  color: #fff;
+  background-color: #61dafb;
+  transition: background-color 0.3s ease;
+}
+
+.to-do-list button:hover {
+  background-color: #4fa3d1;
+}
+
+.item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.input-controller textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  resize: none;
+  line-height: 1.4;
+  color: #282c35;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1.2rem;
+  font-family: inherit;
+  transition: box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  box-shadow: 0 0 5px #61dafb;
+}
+
+.edit-controller {
+  display: flex;
+  gap: 5px;
+}
+
+.update-controller {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 95%;
+    text-align: center;
+  }
+
+  .input-header {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .to-do-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .to-do-input input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

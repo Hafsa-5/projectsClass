@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // methode1 Résoudre l'exercice avec une suite de if..else.
+    'use strict';
+
+var quantity = 2;
+var unit = "K";
+var result;
+if (unit === "K") {
+  result = quantity * 1024;
+} else if (unit === "M") {
+  result = quantity * Math.pow(1024, 2);
+} else if (unit === "G") {
+  result = quantity * Math.pow(1024, 3);
+} else if (unit === "T") {
+  result = quantity * Math.pow(1024, 4);
+} else {
+  result = false;
+}
+
+console.log(result);
+
+
+    // methode2 
+    'use strict';
+
+var quantity = 2,
+    unit = 'k',
+    result;
+
+if (unit === 'K') {
+    result = quantity * 1024;
+} else if (unit === 'M') {
+    result = quantity * 1024 * 1024;
+} else if (unit === 'G') {
+    result = quantity * 1024 * 1024 * 1024;
+} else if (unit === 'T') {
+    result = quantity * 1024 * 1024 * 1024 * 1024;
+} else {
+    result = false;
+}
+
+console.log(result)
+// methode3 switch
+var quantity = 2,
+    unit = 'k',
+    result;
+  switch(mesure){
+    case 'k':
+    result=quantity*1024;
+    break;
+    case 'M':
+        result = quantity * 1024 * 1024;
+        break;
+    case 'G':
+        result = quantity * 1024 * 1024 * 1024;
+        break;
+    case 'T':
+        result = quantity * 1024 * 1024 * 1024 * 1024;
+        break;
+    default:
+        result = false;
+        break;
+}
+
+console.log(result);
+
+   
+
+
+
+</script>
+
+
+</body>
+</html>

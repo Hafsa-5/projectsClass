@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="parent">
+    </div>
+    <button onclick="ajouterElements()">AJOUTER UN PARAGRAPH</button> -->
+   <input type="submit" value="Creer un nouveau p" onclick="addnewElement()">
+   <input type="submit" value="Supprimer un p" onclick="removeElement()">
+   <input type="submit" value="Changer la couleur" onclick="changeElement()">
+   <input type="submit" value="Remplacer element" onclick="replaceElement()">
+   <script>
+    var parent=document.getElementById("parent");
+function ajouterElements(){
+    var par=document.createElement("p")
+    parent.appendChild(par);
+    par.innerHTML="hello";
+    par.style.color="blue";
+}
+function addnewElement(){
+    var par=document.createElement("p")
+   document.body.appendChild(par);
+   par.innerHTML='Hello';
+   par.className="par";
+   par.id="p";
+
+}
+function removeElement(){
+    var element=document.getElementById("p");
+    element.remove(); 
+}
+function replaceElement(){
+    var element=document.getElementById("p");
+    var inp =document.createElement("input");
+    inp.type="submit";
+    document.body.replaceChild(inp,element);
+
+}
+
+function changeElement(){
+    var element=document.getElementsByClassName("par");
+    for(var x in element){
+        element[x].style.color="red";
+    }
+          
+    }
+
+
+   </script>
+  
+
+    
+</body>
+</html>

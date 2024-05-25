@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Température</title>
+    <style>
+        #resultat{
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            /* margin: 45vh; */
+            position: absolute;
+            top: 50%;
+            left: 46%;
+        }
+
+    </style>
+</head>
+<body>
+  
+
+    <button onclick="afficherStatut()">Afficher le statut</button>
+
+    <p id="resultat"></p>
+
+    <script>
+        function afficherStatut() {
+           
+            var temperature = prompt("entrez la valeur :");
+
+            var statut = "";
+            var couleur = "";
+
+            if (temperature <= 0) {
+                statut = "Glass";
+                couleur = "blue";
+                color="gray";
+            } else if (temperature < 100) {
+                statut = "Liquide";
+                couleur = "red";
+                color="yellow";
+                
+               } else if (temperature >= 100) {
+                statut = "Vapeur";
+                couleur = "green";
+                color="black";
+                
+
+            }
+
+            var resultatElement = document.getElementById('resultat');
+            resultatElement.innerHTML = "Statut : " + statut;
+            resultatElement.style.color = color;
+            // resultatElement.style.backgroundColor = couleur;
+             document.getElementById('resultat').style.backgroundColor = couleur;
+
+        }
+    </script>
+</body>
+</html>

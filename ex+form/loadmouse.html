@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+
+  <!-- Pour l'événement "onmouseenter", j'ai ajouté une fonction  "onmouseleave" qui restaure la couleur d'arrière-plan originale. -->
+  <div id="event1" onmouseenter="changeBackground('event1')" onmouseleave="restoreBackground('event1')" style="width: 200px; height: 100px; background-color: lightblue; margin: 10px; text-align: center; line-height: 100px; cursor: pointer;">onmouseenter</div>
+
+  <div id="event2" onclick="addBorder('event2')" style="width: 200px; height: 100px; background-color: lightblue; margin: 10px; text-align: center; line-height: 100px; cursor: pointer;">onclick</div>
+
+  <!-- Pour l'événement "onmouseleave", j'ai ajouté une fonction "onmouseenter" qui restaure l'état du texte original. -->
+  <div id="event3" onmouseleave="changeText('event3')" onmouseenter="restoreText('event3')" style="width: 200px; height: 100px; background-color: lightblue; margin: 10px; text-align: center; line-height: 100px; cursor: pointer;">onmouseleave</div>
+
+  <!-- Pour l'événement "oninput", j'ai modifié la fonction  pour qu'il soit déclenché uniquement lorsque l'utilisateur appuie sur la touche Entrée. -->
+  <div id="event4" onkeydown="checkForEnter(event, 'event4')" style="width: 200px; height: 100px; 
+  background-color: lightblue; margin: 10px; text-align: center; line-height: 100px; cursor: pointer;" contenteditable="true">oninput</div>
+ 
+
+  <script>
+    function changeBackground(elementId) {
+      document.getElementById(elementId).style.backgroundColor = 'lightgreen';
+    }
+
+    // J'ai ajouté cette fonction pour restaurer la couleur d'arrière-plan originale lorsque la souris quitte le div.
+    function restoreBackground(elementId) {
+      document.getElementById(elementId).style.backgroundColor = 'lightblue';
+    }
+
+    function addBorder(elementId) {
+      document.getElementById(elementId).style.border = '2px solid red';
+    }
+
+    function changeText(elementId) {
+      var element = document.getElementById(elementId);
+      element.innerHTML = element.innerHTML.toUpperCase();
+      element.style.fontSize = '24px';
+    }
+    function promptForInput(elementId) {
+  var userInput = prompt('Please enter your input:');
+  if (userInput !== null) {
+    showSuccessMessage(elementId, userInput);
+  }
+}
+
+    // J'ai ajouté cette fonction pour restaurer l'état du texte original lorsque la souris entre dans le div.
+    function restoreText(elementId) {
+      var element = document.getElementById(elementId);
+      element.innerHTML = element.innerHTML.toLowerCase();
+      element.style.fontSize = '16px'; // En supposant que la taille de police originale était de 16px
+    }
+
+    // J'ai modifié cette fonction pour qu'elle vérifie si la touche pressée est la touche Entrée. Si c'est le cas, elle appelle la fonction showSuccessMessage.
+    function checkForEnter(event, elementId) {
+      if (event.key === 'Enter') {
+        showSuccessMessage(elementId);
+        event.preventDefault(); // Empêche l'ajout d'une nouvelle ligne dans l'élément contenteditable lorsque la touche Entrée est pressée
+      }
+    }
+
+    function showSuccessMessage(elementId) {
+      var element = document.getElementById(elementId);
+      alert('Événement 4 réussi ! Vous avez écrit : ' + element.innerText);
+    }
+
+    function afficherPage() {
+      alert("Votre page a été téléchargée!");
+    }
+
+    window.onload = afficherPage;
+  </script>
+
+</body>
+</html>

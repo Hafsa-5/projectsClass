@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <form >
+  
+   <div>
+    <table align="center" width="40%" border="1">
+        <tr>
+            <th colspan="2"align="left"></th>
+            <center>
+                <h1><font size="18px" >Infos Personnel</font></h1>
+            </center>
+        </tr>
+        <tr>
+            <td>
+                <label >Nom</label>
+                <input type="text" required maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td>
+           <label>prenom</label>
+            <input type="text" maxlength="10">
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>GENRE</label>
+            <input name="GENRE" type="radio">H
+            <input name="GENRE" type="radio">F
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>ville</label>
+            <select name="ville">
+                <option value="">Choisissez votre ville</option>
+                <option value="">LAAYOUNE</option>
+                <option value="">AGADIR</option>
+                <option value="">FES</option>
+                <option value=""> TANGER</option>
+
+            </select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Tel</label>
+            <input type="tel".pattern="[06,07]{2}[0-9]{8}">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Date de naissance</label>
+            <input type="datetime-local" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Votre Message</label>
+             <textarea cols="50"rows="5" ></textarea>
+
+        </td>
+    </tr>
+<tr>
+    <td>
+        <label> Motivation</label>
+<input type="range" value="75">
+    </td>
+</tr>
+<tr>
+    <td>
+        <label>Email</label>
+        <input type="email".pattern="@gmail.com">
+    </td>
+</tr>
+<th><input type="submit" value="Submit"></th>
+<th><input type="reset" value="Effacer"></th>
+
+</div>
+
+
+
+          
+  </table>
+</form>
+   
+</body>
+</html>

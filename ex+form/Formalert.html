@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+      }
+      .formContainer {
+        margin-left: 70px;
+        font-weight: bold;
+        text-align: left;
+        font-family: sans-serif, bold, Arial, Helvetica;
+        font-size: 14px;
+        background-color: aliceblue;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .buttons {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      div input {
+        margin-right: 10px;
+      }
+
+      form input {
+        padding: 10px;
+      }
+      form select {
+        background-color: #ffffff;
+        padding: 5px;
+      }
+      form textarea {
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+      form label {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .error {
+        background-color: rgb(238, 155, 155);
+      }
+      #msgError {
+        color: red;
+      }
+    </style>
+
+</head>
+<body>
+    
+    <form
+    name="RegForm"
+    action="/"
+    method="get"
+    class="formContainer"
+    id="formValidation"
+  >
+    <h2 style="text-align: center">Formulaire d'inscription</h2>
+    <p id="msgError"></p>
+    <div>
+      <label for="Nom">Nom:</label>
+      <input type="text" id="Nom" size="60" name="Nom" />
+    </div>
+    <br />
+    <div>
+      <label for="adresse">Adresse:</label>
+      <input type="text" id="adresse" size="60" name="Adresse" />
+    </div>
+    <br />
+    <div>
+      <label for="E-mail">Adresse électronique:</label>
+      <input type="text" id="E-mail" size="60" name="Email" />
+    </div>
+    <br />
+    <div>
+      <label for="Mot de passe">Mot de passe:</label>
+      <input type="text" id="Mot de passe" size="60" name="Mot de passe" />
+    </div>
+    <br />
+    <div>
+      <label for="Téléphone">Téléphone: </label>
+      <input type="tel" id="Téléphone" size="60" name="Téléphone" />
+    </div>
+    <br />
+    <div>
+      <label>Sélectionnez le Livre</label>
+      <select type="text" value="" name="Sujet">
+        <option></option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>PHP</option>
+        <option>JavaScript</option>
+      </select>
+    </div>
+    <br />
+    <div>
+      <label for="commentaire">Commentaires: </label>
+      <textarea
+        cols="62"
+        id="commentaire"
+        rows="10"
+        name="Commentaire"
+      ></textarea>
+    </div>
+    <div class="buttons">
+      <input type="submit" value="Envoyer" name="Envoyer" />
+      <input type="reset" value="Réinitialiser" name="Réinitialiser" />
+    </div>
+  </form>
+
+<script>
+      var form = document.getElementById("formValidation");
+      var messageError = [];
+      form.addEventListener("submit", (e) => {
+        var name = document.forms["RegForm"]["Nom"];
+        var email = document.forms["RegForm"]["Email"];
+        var phone = document.forms["RegForm"]["Téléphone"];
+        var book = document.forms["RegForm"]["Sujet"];
+        var password = document.forms["RegForm"]["Mot de passe"];
+        var address = document.forms["RegForm"]["Adresse"];
+        var comment = document.forms["RegForm"]["Commentaire"];
+        var error = document.getElementById("msgError");
+        messageError.length = 0;
+        error.innerHTML = "";
+        if (name.value == "") {
+          messageError.push("Ajouter un nom");
+          name.focus();ggh
+        }
+        
+
+        if (messageError.length > 0) {
+          e.preventDefault();
+          var errorMessage = "";
+          for (var x in messageError) {
+            errorMessage += messageError[x] + "\n";
+          }
+          alert(errorMessage);
+          error.innerHTML = errorMessage;
+        } else {
+          alert("Validation successful! Hello, user2!!!!");
+        }
+      });
+    </script>
+        
+   
+</body>
+</html>

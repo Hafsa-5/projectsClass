@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          
+          color:gray;
+        }
+       #circle{
+        width : 30px;
+        height: 30px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+        cursor: pointer;
+       }
+     .allDiv {
+        display: flex;
+        width: 50%;
+      
+     }
+  
+
+    </style>
+</head>
+<body>
+    <div id="circle" onclick="changerbacktoggle()"></div>
+    <div class="allDiv"> 
+
+    <form id="formulaire">
+
+        <div>
+         <table  width="40%" border="1">
+             <tr>
+                 <th colspan="2">
+                    <h1>Facturation</h1>
+
+                 </th>
+             </tr>
+             <tr>
+
+                 <td>
+                     <label >Reference:</label>
+                     <input type="text" required maxlength="10" id="reference">
+                 </td>
+                </tr>
+             <tr>
+                 <td>
+                <label>Designation:</label>
+                 <input type="text" maxlength="10" id="designation">
+     
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <label>prix</label>
+                 <input type="number" id="prix">
+
+         </td>
+         </tr>
+         <tr>
+            <td>
+                <label>Quantité:</label>
+                <input type="number" id="quantité">
+
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <label>TVA</label>
+                <input type="number" id="tva">
+
+        </td>
+        </tr>
+        <th><button type="button" onclick="ajouteralaliste()">Ajouter a la liste</button></th>
+       
+        <table border="10" id="liste" class="table">
+           
+                <tr >
+                    <th>Reference</th>
+                    <th>Désignation</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>TVA</th>
+                    <th>TOTAL</th>
+                </tr>
+          
+        
+
+        </table>
+
+    </div>
+    </form>
+        <script >
+            function ajouteralaliste() {
+    var reference =document.getElementById("reference").value;
+    var designation =document.getElementById("designation").value;
+    var prix =parseFloat(document.getElementById("prix").value);
+    var quantite =parseInt(document.getElementById("quantité").value);
+    var tva =parseFloat(document.getElementById("tva").value);
+    var total=totalCalcul(prix,quantite,tva);
+
+    var table = document.getElementById("liste");
+
+    var newRow = table.insertRow(-1);
+
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    var cell3 = newRow.insertCell(2);
+    var cell4 = newRow.insertCell(3);
+    var cell5 = newRow.insertCell(4);
+    var cell6 = newRow.insertCell(5);
+
+    cell1.innerHTML = reference;
+    cell2.innerHTML = designation;
+    cell3.innerHTML = prix;
+    cell4.innerHTML = quantite;
+    cell5.innerHTML = tva;
+    cell6.innerHTML = total;
+   
+}
+
+
+
+function changerbacktoggle(){
+    var body=document.body;
+    if(body.style.backgroundColor==="black"){
+        body.style.backgroundColor="";
+    }
+        else{
+            body.style.backgroundColor="black";
+
+        }
+    }
+// function changerbacktoggle(){
+//     var body =document.body;
+//     body.classList.toggle("dark-mode");
+// }
+
+function totalCalcul(prix,quantite,tva){
+    var totalht=prix*quantite;
+    var montanttva=(totalht*tva)/100;
+    var totalttc=totalht+montanttva;
+    return totalttc;
+}
+        </script>
+
+
+
+
+    
+</body>
+</html>

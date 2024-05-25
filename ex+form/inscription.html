@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    
+    <title>Login Form</title>
+    
+</head>
+<body>
+    <div class="login">
+        <h1>Connexion</h1>
+        <form onsubmit="return valider()" class="divprinc">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" name="username" id="username">
+            
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password">
+            
+            <button type="submit" class="notif" id="notif">Entrer</button>
+        </form>
+    </div>
+
+    <script>
+        let arr = [
+            { nom: "user1", password: "user1p" },
+            { nom: "user2", password: "user2p" },
+            { nom: "user3", password: "user3p" }
+        ];
+
+        function valider() {
+            let nomInput = document.getElementById('username');
+            let passwordInput = document.getElementById('password');
+            let notiff = document.getElementById('notif');
+
+            let enteredNom = nomInput.value;
+            let enteredPassword = passwordInput.value;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].nom === enteredNom && arr[i].password === enteredPassword) {
+                    alert('Login successful Mr: ' + nomInput.value);
+                    notiff.style.visibility = "visible";
+                    setTimeout(function() {
+                        window.location.href = "https://www.w3schools.com/jsref/met_win_settimeout.asp";
+                    }, 2000); // Delay for 2 seconds before redirecting
+                    return false; // Prevent form submission
+                }
+            }
+
+            alert('Invalid username or password');
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>

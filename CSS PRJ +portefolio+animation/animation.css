@@ -1,0 +1,57 @@
+div{
+    width: 100px;
+    height: 100px;
+    animation-name: talib;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    background-color: aqua
+}
+@keyframes talib{
+    /* from{ 
+        background-color: aqua; 
+        width: 0%;
+    }
+    to{
+       background-color: blue;
+       width: 100%;
+    }*/
+    0%{
+        background-color: brown;
+        width: 0%;
+        translate: 0 0;
+        rotate: 0deg;
+
+    }
+    25%{
+        background-color: blue;
+        translate: 0 500;
+        rotate: 90deg;
+        translate: 0 500px;
+    }
+    50%{
+         background-color: aquamarine;
+         rotate: 180deg;
+         translate: 400px 500px;
+
+
+    }
+    75%{
+        background-color: blueviolet;
+        rotate: 270deg;
+        translate: 400px 0;
+
+
+    }
+    100%{
+        background-color: coral;
+        rotate: 360deg;
+        translate: 0 0;
+    }
+}
+body{
+    background-color:black;
+}
+div:hover{
+animation-play-state:paused ;
+cursor: pointer;
+}
